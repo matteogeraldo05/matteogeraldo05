@@ -1,0 +1,142 @@
+:root {
+    /* nice washed colours */
+    --background: #4F525D;
+    --grey: #5A6374;
+    --red: #DF6C75;
+    --green: #98C379;
+    --yellow: #E4C07A;
+    --blue: #61AFEF;
+    --purple: #C577DD;
+    --cyan: #56B5C1; 
+    --white: #DCDFE4;
+
+    /* harsh colours */
+    --terminal_black: #000000;
+    --terminal_red:   #EF2929;
+    --terminal_green: #8AE234;
+    --terminal_yellow:#FCE94F;
+    --terminal_blue:  #729FCF;
+    --terminal_purple:#AD7FA8;
+    --terminal_cyan:  #34E2E2;
+    --terminal_white: #EEEEEC;
+}
+
+@font-face {
+    font-family: codeFont;
+    src:url("fonts/SpaceMono-Regular.ttf") format("truetype"), 
+        url("fonts/SpaceMono-Bold.ttf") format("truetype"),
+        url("fonts/SpaceMono-Italic.ttf") format("truetype"),
+        url("fonts/SpaceMono-BoldItalic.ttf") format("truetype"); 
+}
+
+p { font-family: codeFont; }
+
+body {
+    background-color: var(--background);
+    color: green;
+    font-family: monospace;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#terminal-container {
+    width: 40vw;
+    height: 55vh;
+    background-color: var(--terminal_black);
+    border-radius: 1vh;
+    box-shadow: 0vw 0vh 2vh black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#title-bar {
+    background-color: #202020;
+    color: white;
+    height: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vh;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+
+#title-text {
+    font-size: 1.1vh;
+    margin-left: 0.3vw;
+}
+
+#buttons {
+    display: flex;
+    gap: 1.7vw;
+}
+
+#buttons span {
+    display: inline-block;
+    width: 1vw;
+    height: 1vh;
+    text-align: center;
+    line-height: 1.4vh;
+    cursor: pointer;
+    font-size: 1.4vh;
+}
+
+#buttons .minimize,
+#buttons .maximize,
+#buttons .close {
+    color: white;
+}
+
+#terminal {
+    flex-grow: 1;
+    background-color: var(--terminal_black);
+    color: var(--terminal_white);
+    padding: 1vw;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: codeFont;
+    font-size: 1.3vh;
+}
+
+#output {
+    font-family: codeFont;
+    font-size: 1.3vh;
+    white-space: pre-wrap;
+}
+
+#input-line {
+    font-family: codeFont;
+    font-size: 1.3vh;
+    display: flex;
+    align-items: center;
+}
+
+#prompt {
+    font-family: codeFont;
+    font-size: 1.3vh;
+    color: var(--terminal_white);
+    padding-right: -1.2vw;
+}
+
+#input {
+    font-family: codeFont;
+    font-size: 1.3vh;
+    background-color: black;
+    color: var(--terminal_white);
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#input::selection {
+    background-color: green;
+    color: black;
+}
