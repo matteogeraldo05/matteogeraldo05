@@ -29,8 +29,6 @@
         url("fonts/SpaceMono-BoldItalic.ttf") format("truetype"); 
 }
 
-p { font-family: codeFont; }
-
 body {
     background-color: var(--background);
     color: green;
@@ -56,17 +54,17 @@ body {
 #title-bar {
     background-color: #202020;
     color: white;
-    height: 3vh;
+    height: 5vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1vh;
+    padding: 0 2vh;
     font-family: monospace;
     box-sizing: border-box;
 }
 
 #title-text {
-    font-size: 1.1vh;
+    font-size: 1.6vh;
     margin-left: 0.3vw;
 }
 
@@ -77,12 +75,12 @@ body {
 
 #buttons span {
     display: inline-block;
-    width: 1vw;
-    height: 1vh;
+    width: 1.2vw;
+    height: 1.2vh;
     text-align: center;
     line-height: 1.4vh;
     cursor: pointer;
-    font-size: 1.4vh;
+    font-size: 2vh;
 }
 
 #buttons .minimize,
@@ -92,41 +90,44 @@ body {
 }
 
 #terminal {
-    flex-grow: 1;
+    flex: 1;
     background-color: var(--terminal_black);
     color: var(--terminal_white);
     padding: 1vw;
     box-sizing: border-box;
-    overflow-y: hidden;
+    overflow-y: auto;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     font-family: codeFont;
-    font-size: 1.3vh;
+    font-size: 2vh;
 }
 
 #output {
     font-family: codeFont;
-    font-size: 1.3vh;
+    font-size: 2vh;
     white-space: pre-wrap;
+    overflow-y: auto;
+    overflow: hidden;
 }
 
 #input-line {
     font-family: codeFont;
-    font-size: 1.3vh;
+    font-size: 2vh;
     display: flex;
     align-items: center;
 }
 
 #prompt {
     font-family: codeFont;
-    font-size: 1.3vh;
+    font-size: 2vh;
     color: var(--terminal_white);
     padding-right: -1.2vw;
 }
 
 #input {
     font-family: codeFont;
-    font-size: 1.3vh;
+    font-size: 2vh;
     background-color: black;
     color: var(--terminal_white);
     border: none;
@@ -137,6 +138,6 @@ body {
 }
 
 #input::selection {
-    background-color: green;
-    color: black;
+    background-color: var(--terminal_white);
+    color: var(--terminal_black);
 }
