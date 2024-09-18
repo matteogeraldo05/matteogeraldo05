@@ -110,7 +110,7 @@ window.onload = function() {
             terminal.innerHTML += "your pc is going to explode now!\n";
             terminal.innerHTML += virusText;
             setTimeout(() => {
-                close; 
+                close(); 
             }, 5000);
         },
         "dir": () => "2024-06-16  12:33 PM    {DIR}      about\n2024-07-14   4:12 PM    {DIR}      projects\n2024-08-22  12:33 PM    {DIR}      contact\n2024-09-17  11:54 AM    {EXE}      virus.exe\n",
