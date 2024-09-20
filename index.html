@@ -1,38 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Matteogeraldo05</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="images/AlgorithMatteo.ico">
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteogeraldo05</title>
+    <link rel="icon" href="images/AlgorithMatteo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="sidebar">
+        
+        <div class="sidebar-buttons">
+            <div class="sidebar-buttonIco">
+                <input id="algorithMatteo" type="image" src="images/AlgorithMatteo.ico" onclick="location.href='index.html'">
+                <span id="title">Matteogeraldo05</span>
+            </div>
+            <div class="sidebar-button">
+                <input type="image" src="images/about.png" onclick="location.href='about.html'">
+                <span>About Me</span>
+            </div>
+            <div class="sidebar-button">
+                <input type="image" src="images/work.png" onclick="location.href='experience.html'">
+                <span>Work Experience</span>
+            </div>
+            <div class="sidebar-button">
+                <input type="image" src="images/projects.png" onclick="location.href='projects.html'">
+                <span>Projects</span>
+            </div>
+            <div class="sidebar-button">
+                <input type="image" src="images/contact.png" onclick="location.href='contact.html'">
+                <span>Contact Me</span>
+            </div>
+        </div>
+    </div>
 
-    <body>
-        <!-- user@matteogeraldo05:~$ -->
-        <div>
-            <h3>Hello, my name is</h3>
-            <h1>Matteo De Angelis Geraldo</h1>
+    <div id="hallo">
+        <h3>Hello, my name is</h3>
+        <h1>Matteo De Angelis Geraldo</h1>
+    </div>
+
+    <div id="terminal-container">
+        <div id="title-bar">
+            <span id="title-text">C:\MatteOS\System168\cmd.exe</span>
+            <div id="buttons">
+                <span class="minimize">—</span>
+                <span class="maximize">◻</span>
+                <span class="close">✕</span>
+            </div>
         </div>
 
-        <div id="terminal-container">
-            <div id="title-bar">
-                <span id="title-text">C:\MatteOS\System168\cmd.exe</span>
-                <div id="buttons">
-                    <span class="minimize">—</span>
-                    <span class="maximize">◻</span>
-                    <span class="close">✕</span>
-                </div>
-            </div>
-
-            <div id="terminal">
-                <div id="output"></div>
-                <div id="input-line">
-                    <span id="prompt">C:\</span>
-                    <input type="text" id="input" autofocus autocomplete="off">
-                </div>
+        <div id="terminal">
+            <div id="output"></div>
+            <div id="input-line">
+                <span id="prompt">C:\</span>
+                <input type="text" id="input" autofocus autocomplete="off">
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>
