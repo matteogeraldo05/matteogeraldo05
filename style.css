@@ -48,9 +48,12 @@ body {
     transform: translateY(-50%); 
     color: var(--white); 
     text-align: left; 
+    font-size: 2.5vh;
+    z-index: 10;
 }
 
 #terminal-container {
+    z-index: 20;
     position: relative;
     top: 20%;
     left: 50vw;
@@ -160,6 +163,7 @@ body {
 
 /*& Sidebar */
 #sidebar {
+    z-index: 15;
     position: fixed;
     top: 0;
     left: 0;
