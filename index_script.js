@@ -139,7 +139,10 @@ window.onload = function() {
                      "2024-08-22  12:33 PM    {DIR}      contact\n" +
                      "2024-09-17  11:54 AM    {EXE}      virus.exe\n",
         //close site
-        "exit": () => {close();},
+        "exit": () => {
+            close();
+            terminal.innerHTML += "if you are reading this window.close() does not work.\n";
+        },
         //change terminal color
         "color": (args) => {
             if (args.length > 0) {
@@ -194,7 +197,8 @@ window.onload = function() {
             terminal.innerHTML += virusText;
             setTimeout(() => {
                 close(); 
-            }, 5000);
+                terminal.innerHTML += "if you are reading this window.close() does not work.\n";
+            }, 3000);
         }
     };
 

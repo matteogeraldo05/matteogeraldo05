@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Matteogeraldo05</title>
+    <title>Education - Matteogeraldo05</title>
     <link rel="icon" href="images/AlgorithMatteo.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -21,7 +21,7 @@
     <script defer>
         // Change the title to "Matteogeraldo05"
         function normalTitle() {
-            document.title = "Projects - Matteogeraldo05";
+            document.title = "Education - Matteogeraldo05";
         }
 
         // Change the title to "Leaving So Soon?"
@@ -35,15 +35,15 @@
 
         window.onload = function() {
             // Typing effect for name
-            typeOutText("Here are some of my", 100, function() {
+            typeOutText("Here is my Past, Present and Future", 100, function() {
                 const nameText = document.getElementById('projects-text');
                 nameText.style.visibility = 'visible'; // Make the name visible
-                typeOutText("Recent Projects", 100);
+                typeOutText("Education", 100);
             });
 
             // Typing function
             function typeOutText(text, speed, callback) {
-                const targetElement = document.getElementById(text.includes("some") ? 'here-text':'projects-text');
+                const targetElement = document.getElementById(text.includes("Past") ? 'here-text':'projects-text');
                 targetElement.classList.add('typing-effect'); // Add blinking cursor
                 targetElement.innerHTML = ''; // Clear existing text
                 let i = 0;
