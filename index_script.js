@@ -21,6 +21,33 @@ window.onload = function() {
     const splashText = "MatteOS [Version 11.26]\n(c) MatteOS. All rights reserved.\n\n";
     let currentPrompt = "C:\\";
 
+    // Call the function to type out the greeting text first, then reveal the name
+    typeOutText("Hello, my name is", 100, function() {
+        const nameText = document.getElementById('name-text');
+        nameText.style.visibility = 'visible'; // Make the name visible
+        typeOutText("Matteo De Angelis Geraldo", 100);
+    });
+
+    function typeOutText(text, speed, callback) {
+    const targetElement = document.getElementById(text.includes("name") ? 'greeting-text':'name-text');
+    targetElement.classList.add('typing-effect'); // Add blinking cursor
+    targetElement.innerHTML = ''; // Clear existing text
+    let i = 0;
+
+    function type() {
+        if (i < text.length) {
+            targetElement.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        } else {
+            targetElement.classList.remove('typing-effect'); // Remove cursor when done
+            if (callback) callback(); // Call the callback function when done
+        }
+    }
+    type();
+}
+    
+
     // splash text
     terminal.innerHTML += splashText;
     // autoscroll down
@@ -106,34 +133,6 @@ window.onload = function() {
                 return "The system cannot find the path specified.";
             }
         },
-        //one piece easter egg
-        "onepiece.exe": () => {
-            terminal.innerHTML += "now playing: 🎶 We Are 🎶\n";
-            audioElements.weAreAudio.play(); // Play the BEST ANIME OPENING OF ALL TIME
-            return "";
-        },
-        //virus easter egg
-        "virus.exe": () => {
-            const virusText = "⠀⠀⠀⠀⠀⣀⡴⠖⠒⠒⢒⣒⡖⠒⠒⠒⠒⠒⠒⠶⠶⠤⣤⣀⣀⠀⠀⠀⠀⠀\n" +
-                "⠀⠀⠀⠀⣴⠋⠀⠀⠤⣪⣝⡲⠯⠭⠥⠀⠀⠀⠀⠀⣀⣐⣒⡒⠉⠙⢦⡀⠀⠀\n" +
-                "⠀⠀⠀⣼⠃⠀⠈⠰⠫⠋⣀⣀⣀⣀⠀⠃⠀⠀⠀⠸⠀⠀⠀⠈⠆⠀⠀⢧⠠⠀\n" +
-                "⠀⣠⡾⠁⠀⡀⠠⠄⢰⣿⠿⠿⢯⣍⣙⣶⠀⠀⢀⣠⣶⣾⣿⠶⠆⠤⠤⢜⣷⡄\n" +
-                "⡾⢻⢡⡞⠋⣽⠛⠲⠤⡤⠴⠋⠀⠀⠉⠁⠀⠀⠈⣿⠁⠀⢀⣀⣠⠶⠶⣽⣵⣿\n" +
-                "⣇⢠⢸⡥⠶⣟⠛⠶⣤⣀⠀⠀⠀⢲⡖⣂⣀⠀⠀⠈⢳⣦⡀⠉⠉⣽⡄⠰⣻⣿\n" +
-                "⠙⣮⡪⠁⠀⠻⣶⣄⣸⣍⠙⠓⠶⣤⣥⣉⣉⠀⠠⠴⠋⠁⣈⣥⣴⣿⡇⠈⣽⠃\n" +
-                "⠀⠈⢻⡄⠀⠀⠙⣆⢹⡟⠷⣶⣤⣇⣀⠉⠙⡏⠉⣻⡟⢉⣹⣅⣼⣿⡇⠀⡏⠀\n" +
-                "⠀⠀⠀⠻⣄⠀⠀⠈⠻⢦⡀⠀⣽⠉⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⡇⠀\n" +
-                "⠀⠀⠀⠀⠙⢦⣀⠄⡀⢄⡙⠻⠧⣤⣀⣀⣿⠀⠀⣿⢀⣼⣃⣾⣼⠟⠁⠀⡇⠀\n" +
-                "⠀⠀⠀⠀⠀⠀⠉⠓⢮⣅⡚⠵⣒⡤⢄⣉⠉⠉⠉⠉⠉⠉⠉⠉⢀⡠⠀⠀⣷⠀\n" +
-                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠳⢦⣄⡉⠙⠛⠃⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⡿⠀\n" +
-                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠲⠶⢤⣤⣀⣀⣀⣀⣀⣀⡤⠞⠁⠀\n";
-                
-            terminal.innerHTML += "your pc is going to explode now!\n";
-            terminal.innerHTML += virusText;
-            setTimeout(() => {
-                close(); 
-            }, 5000);
-        },
         //list directory
         "dir": () => "2024-06-16  12:33 PM    {DIR}      about\n" +
                      "2024-07-14   4:12 PM    {DIR}      projects\n" +
@@ -158,6 +157,44 @@ window.onload = function() {
             } else {
                 return "Please specify a color.";
             }
+        },
+        //EASTER EGGS
+        //one piece easter egg
+        "onepiece.exe": () => {
+            terminal.innerHTML += "now playing: 🎶 We Are 🎶\n";
+            audioElements.weAreAudio.play(); // Play the BEST ANIME OPENING OF ALL TIME
+            return "";
+        },
+        "silly.bat": () => {
+            // Change all <img> elements' src attributes
+            const imageInputs = document.querySelectorAll('input[type="image"]');
+            imageInputs.forEach(input => {
+                input.src = "images/car.jpg"; // Replace with your desired image path
+            }); 
+            return "wait, im websited";
+        },
+        //virus easter egg
+        "virus.exe": () => {
+            const virusText = ""+ //LOL
+                "⠀⠀⠀⠀⠀⣀⡴⠖⠒⠒⢒⣒⡖⠒⠒⠒⠒⠒⠒⠶⠶⠤⣤⣀⣀⠀⠀⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⣴⠋⠀⠀⠤⣪⣝⡲⠯⠭⠥⠀⠀⠀⠀⠀⣀⣐⣒⡒⠉⠙⢦⡀⠀⠀\n" +
+                "⠀⠀⠀⣼⠃⠀⠈⠰⠫⠋⣀⣀⣀⣀⠀⠃⠀⠀⠀⠸⠀⠀⠀⠈⠆⠀⠀⢧⠠⠀\n" +
+                "⠀⣠⡾⠁⠀⡀⠠⠄⢰⣿⠿⠿⢯⣍⣙⣶⠀⠀⢀⣠⣶⣾⣿⠶⠆⠤⠤⢜⣷⡄\n" +
+                "⡾⢻⢡⡞⠋⣽⠛⠲⠤⡤⠴⠋⠀⠀⠉⠁⠀⠀⠈⣿⠁⠀⢀⣀⣠⠶⠶⣽⣵⣿\n" +
+                "⣇⢠⢸⡥⠶⣟⠛⠶⣤⣀⠀⠀⠀⢲⡖⣂⣀⠀⠀⠈⢳⣦⡀⠉⠉⣽⡄⠰⣻⣿\n" +
+                "⠙⣮⡪⠁⠀⠻⣶⣄⣸⣍⠙⠓⠶⣤⣥⣉⣉⠀⠠⠴⠋⠁⣈⣥⣴⣿⡇⠈⣽⠃\n" +
+                "⠀⠈⢻⡄⠀⠀⠙⣆⢹⡟⠷⣶⣤⣇⣀⠉⠙⡏⠉⣻⡟⢉⣹⣅⣼⣿⡇⠀⡏⠀\n" +
+                "⠀⠀⠀⠻⣄⠀⠀⠈⠻⢦⡀⠀⣽⠉⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⡇⠀\n" +
+                "⠀⠀⠀⠀⠙⢦⣀⠄⡀⢄⡙⠻⠧⣤⣀⣀⣿⠀⠀⣿⢀⣼⣃⣾⣼⠟⠁⠀⡇⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠉⠓⢮⣅⡚⠵⣒⡤⢄⣉⠉⠉⠉⠉⠉⠉⠉⠉⢀⡠⠀⠀⣷⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠳⢦⣄⡉⠙⠛⠃⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⡿⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠲⠶⢤⣤⣀⣀⣀⣀⣀⣀⡤⠞⠁⠀\n";
+                
+            terminal.innerHTML += "your pc is going to explode now!\n";
+            terminal.innerHTML += virusText;
+            setTimeout(() => {
+                close(); 
+            }, 5000);
         }
     };
 
@@ -195,10 +232,11 @@ window.onload = function() {
     // Sidebar functionality
     const sidebar = document.getElementById("sidebar");
     // Fade in each button with a delay
-    const icons = document.querySelectorAll(".sidebar-buttons input");
+    const icons = document.querySelectorAll(".sidebar-buttons input, .sidebar-buttonIco input");
     icons.forEach((icon, index) => {
         setTimeout(() => {
             icon.classList.add("fade-in");
         }, index * 150); // stagger the fade-in by 150ms
     });
 };
+    
