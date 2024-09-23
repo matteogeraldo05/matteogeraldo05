@@ -7,7 +7,7 @@
     <link rel="icon" href="images/AlgorithMatteo.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <style>
-        #projects{
+        #projects {
             position: absolute;
             top: 25%;
             left: 10vw; 
@@ -16,6 +16,85 @@
             text-align: left; 
             font-size: 2.5vh;
             z-index: 10;
+        }
+        .website-container {
+            display: flex; 
+            align-items: center; 
+            width: 90%;
+            margin-bottom: 20vh; 
+            margin-left: 5vw;
+            background-color: #0c0d12;
+            border-radius: 15px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+            padding: 1vw; 
+        }
+        .website-iframe {
+            width: 65%;
+            height: 80vh; 
+            border: none; 
+        }
+        .project-info {
+            margin-left: 3vw; 
+            color: var(--white); 
+            text-align: left; 
+            max-width: 20vw; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            white-space: wrap; 
+        }
+        .view-project-btn {
+            margin-top: 1vw; 
+            padding: 0.5vw 1vw; 
+            background-color: #007bff; 
+            color: #fff; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            text-decoration: none;
+            font-size: 1vw; 
+        }
+        .view-project-btn:hover {
+            background-color: #0056b3; 
+        }
+
+        .image-carousel {
+            position: relative;
+            width: 80vw;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .image-carousel img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .image-carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #prev {
+            left: 10px;
+        }
+
+        #next {
+            right: 10px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin: 0; 
         }
     </style>
     <script defer>
@@ -69,6 +148,28 @@
                 }, index * 150); // stagger the fade-in by 150ms
             });
         };
+
+        let currentImageIndex = 0;
+        const images = [
+            "images/title.png",
+            "images/main.png",
+            "images/secret.png"
+        ];
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            document.getElementById("carousel-image").src = images[currentImageIndex];
+        }
+
+        // Optional: Automatically change the image every 5 seconds
+        setInterval(() => {
+            changeImage(1);
+        }, 5000);
     </script>
 </head>
 <body>
@@ -120,6 +221,75 @@
     <div id="projects">
         <h3 id="here-text">Here are some of my</h3>
         <h1 id="projects-text" style="visibility: hidden;">Recent Projects</h1>
+    </div>
+
+    <!-- Image Carousel -->
+    <div class="website-container">
+        <div class="image-carousel">
+            <img id="carousel-image" src="images/title.png" alt="Carousel Image" />
+            <button id="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button id="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+        <div class="project-info">
+            <p>OMG HELLO KITTY!.</p>
+            <a href="https://github.com/matteogeraldo05/kitty-Game" class="view-project-btn" target="_blank">View Project</a>
+        </div>
+    </div>
+    <div class="website-container">
+        <iframe src="https://matteogeraldo05.github.io/SummerBar/" title="University Progress Bar" class="website-iframe"></iframe>
+        <div class="project-info">
+            <p>This website was initially created to count down
+                the remaining days of summer but has since been
+                repurposed to track the days left in the Fall 2024
+                semester. It features a progress bar for a visual 
+                representation of the time remaining, and there's 
+                a little surprise awaiting users once the final 
+                day has been completed.</p>
+            <a href="https://github.com/matteogeraldo05/SummerBar" class="view-project-btn" target="_blank">View Project</a>
+        </div>
+    </div>
+    <div class="website-container">
+        <iframe src="https://matteogeraldo05.github.io/WiiBoard/" title="WiiBoard" class="website-iframe"></iframe>
+        <div class="project-info">
+            <p>This website is inspired by Nintendo's home 
+                video game console, the Wii, and is currently 
+                a work in progress. The ultimate goal is to 
+                create an interactive platform where users 
+                can write and leave messages for future visitors. 
+                However, as I am still learning about server hosting 
+                and data storage, only individual 
+                users can currently access and write notes.</p>
+            <a href="https://github.com/matteogeraldo05/WiiBoard" class="view-project-btn" target="_blank">View Project</a>
+        </div>
+    </div>
+    <div class="website-container">
+        <iframe src="https://matteogeraldo05.github.io/gear5/" title="Gear 5" class="website-iframe"></iframe>
+        <div class="project-info">
+            <p>This is my Gear 5 website, inspired by my 
+                favorite fictional story, One Piece, particularly 
+                the moment when the main character Luffy transforms 
+                into his fifth gear. This project has been a fantastic 
+                way for me to enhance my skills in CSS animation, 
+                allowing me to bring the excitement of that epic 
+                transformation to life.</p>
+            <a href="https://github.com/matteogeraldo05/gear5" class="view-project-btn" target="_blank">View Project</a>
+        </div>
+    </div>
+    <div class="website-container">
+        <iframe src="https://matteogeraldo05.github.io/XPwebsite.github.io/" title="XP Website" class="website-iframe"></iframe>
+        <div class="project-info">
+            <p>Welcome to my Windows XP Simulation website, 
+                a tribute to the operating system that introduced 
+                me to the world of computers during my childhood. 
+                My parents' desktop ran Windows XP, and I loved its 
+                aesthetic and the countless games I played on it. 
+                When I discovered the XP.css framework I decided 
+                to create a desktop simulation out of sheer boredom 
+                during my high school spare time. (in case you need 
+                help with the it's the name of the main character
+                from my Gear 5 site.)</p>
+            <a href="https://github.com/matteogeraldo05/XPwebsite.github.io" class="view-project-btn" target="_blank">View Project</a>
+        </div>
     </div>
 </body>
 </html>

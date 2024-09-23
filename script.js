@@ -109,6 +109,16 @@ window.onload = function() {
     }
 
     const commands = {
+        //list commands
+        "help": () => "Commands:\n\nhelp          -> list of commands\n"+
+        "echo {text}   -> repeats input\n"+
+        "cls           -> clears terminal\n"+
+        "date          -> shows current date\n"+
+        "print         -> prints the current screen\n"+
+        "cd {html}     -> redirects to the html page\n"+
+        "color {color} -> changes terminal color\n"+
+        "dir           -> shows list of files\n"+
+        "exit          -> closes tab\n",
         //repeat user input
         "echo": (args) => args.join(" "),
         //clear screen
@@ -116,14 +126,6 @@ window.onload = function() {
             terminal.innerHTML = splashText;
             return "";
         },
-        //list commands
-        "help": () => "Commands:\n\nhelp          -> list of commands\n"+
-        "echo {text}   -> repeats input\n"+
-        "cls           -> clears terminal\n"+
-        "cd {html}     -> redirects to the html page\n"+
-        "color {color} -> changes terminal color\n"+
-        "dir           -> shows list of files\n"+
-        "exit          -> closes tab\n",
         //change directory
         "cd": (args) => {
             if ((args.length > 0) && (args == "about" || args == "projects" || args == "contact")) {
@@ -138,6 +140,18 @@ window.onload = function() {
                      "2024-07-14   4:12 PM    {DIR}      projects\n" +
                      "2024-08-22  12:33 PM    {DIR}      contact\n" +
                      "2024-09-17  11:54 AM    {EXE}      virus.exe\n",
+        // exactly what you think it does
+        "print": () => {
+            window.print(); // This will trigger the print dialog
+            return "printing..."; // Message to display in terminal
+        },
+        //spit out todays date
+        "date": () => {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+            const day = String(today.getDate()).padStart(2, '0');
+            return `The current date is: ${year}-${month}-${day}`;},
         //close site
         "exit": () => {
             close();
@@ -175,6 +189,15 @@ window.onload = function() {
                 input.src = "images/car.jpg"; // Replace with your desired image path
             }); 
             return "wait, im websited";
+        },
+        //DO NOT DELETE SYSTEM 32
+        "del": (args) => {
+            if (args.length > 0 && args[0] === "C:\\System32") {
+                window.location.href = "home.html"; // Redirect to blank HTML
+                return "C:\\System32 deleted successfully."; // Message to display in terminal
+            } else {
+                return "The system cannot find the path specified.";
+            }
         },
         //virus easter egg
         "virus.exe": () => {

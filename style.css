@@ -132,15 +132,13 @@ body {
     font-size: 2vh;
     display: flex;
     align-items: center;
-    margin-top: -0.1vh;
+    margin-top: -0.2vh;
 }
 
 #prompt {
     font-family: codeFont;
     font-size: 2vh;
     color: var(--terminal_white);
-   
-
 }
 
 #input {
