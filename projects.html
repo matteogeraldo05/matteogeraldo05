@@ -29,7 +29,7 @@
             padding: 1vw; 
         }
         .website-iframe {
-            width: 65%;
+            width: 75%;
             height: 80vh; 
             border: none; 
         }
@@ -66,7 +66,7 @@
         }
 
         .image-carousel img {
-            width: 100%;
+            width: 60%;
             border-radius: 15px;
         }
 
@@ -77,17 +77,20 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            padding: 10px;
+            padding: 1vw;
             cursor: pointer;
             border-radius: 5px;
         }
 
-        #prev {
-            left: 10px;
-        }
+        #prev {left: 4.5vw;}
 
-        #next {
-            right: 10px;
+        #next {right: 4.5vw;}
+        .half-size {
+            height: 60%; 
+            width: 60%;
+            position: relative;
+            left: 15vw;
+            top: 2.5vw;
         }
 
         body {
@@ -223,16 +226,23 @@
         <h1 id="projects-text" style="visibility: hidden;">Recent Projects</h1>
     </div>
 
-    <!-- Image Carousel -->
-    <div class="website-container">
+    <!--KITTY!!!-->
+    <div class="website-container half-size">
         <div class="image-carousel">
             <img id="carousel-image" src="images/title.png" alt="Carousel Image" />
             <button id="prev" onclick="changeImage(-1)">&#10094;</button>
             <button id="next" onclick="changeImage(1)">&#10095;</button>
         </div>
         <div class="project-info">
-            <p>OMG HELLO KITTY!.</p>
+            <p>Basic cat game, made using pygame. Uses the famous internet cat <a href="https://x.com/unicouniuni3" target="_blank">@unicouniuni3</a></p>
             <a href="https://github.com/matteogeraldo05/kitty-Game" class="view-project-btn" target="_blank">View Project</a>
+        </div>
+    </div>
+    <div class="website-container">
+        <iframe src="https://matteogeraldo05.com/projects.html" title="Matteogeraldo05" class="website-iframe"></iframe>
+        <div class="project-info">
+            <p>This is my website :3.</p>
+            <a href="https://github.com/matteogeraldo05/SummerBar" class="view-project-btn" target="_blank">View Project</a>
         </div>
     </div>
     <div class="website-container">
@@ -283,12 +293,19 @@
                 me to the world of computers during my childhood. 
                 My parents' desktop ran Windows XP, and I loved its 
                 aesthetic and the countless games I played on it. 
-                When I discovered the XP.css framework I decided 
+                When I discovered the <a href="https://github.com/botoxparty/XP.css" target="_blank">XP.css</a> framework I decided 
                 to create a desktop simulation out of sheer boredom 
                 during my high school spare time. (in case you need 
                 help with the it's the name of the main character
                 from my Gear 5 site.)</p>
             <a href="https://github.com/matteogeraldo05/XPwebsite.github.io" class="view-project-btn" target="_blank">View Project</a>
+        </div>
+    </div>
+    <div class="website-container">
+        <img id="carousel-image" src="images/arcade.gif" alt="Carousel Image" />
+        <div class="project-info">
+            <p>IM BUILDING AN ARCADE!!!YEAH MAN!!!</p>
+            <a href="" class="view-project-btn" target="_blank">Download Model</a>
         </div>
     </div>
 </body>
