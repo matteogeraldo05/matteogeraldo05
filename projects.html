@@ -7,6 +7,14 @@
     <link rel="icon" href="images/AlgorithMatteo.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin: 0; 
+            font-size: 3vh;
+        }
+
         #projects {
             position: absolute;
             top: 25%;
@@ -17,6 +25,7 @@
             font-size: 2.5vh;
             z-index: 10;
         }
+
         .website-container {
             display: flex; 
             align-items: center; 
@@ -24,50 +33,57 @@
             margin-bottom: 20vh; 
             margin-left: 5vw;
             background-color: #0c0d12;
-            border-radius: 15px; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+            border-radius: 3vw; 
+            box-shadow: 0 3vh 3vw rgba(0, 0, 0, 0.2); 
             padding: 1vw; 
         }
+
         .website-iframe {
             width: 75%;
             height: 80vh; 
             border: none; 
         }
+
         .project-info {
-            margin-left: 3vw; 
+            margin-left: 2vw; 
             color: var(--white); 
             text-align: left; 
             max-width: 20vw; 
             overflow: hidden; 
-            text-overflow: ellipsis; 
-            white-space: wrap; 
+            padding-bottom: 2vh;
         }
+
         .view-project-btn {
-            margin-top: 1vw; 
-            padding: 0.5vw 1vw; 
-            background-color: #007bff; 
-            color: #fff; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
+            transition: all 0.5s ease;
+            color: var(--white);
+            border: 0.2vw solid var(--white);
+            font-family: codeFont;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1;
+            font-size: 2.5vh;
+            background-color: transparent;
+            padding: 1vh;
+            border-radius: 0.5vw;
             text-decoration: none;
-            font-size: 1vw; 
         }
+        
         .view-project-btn:hover {
-            background-color: #0056b3; 
+            color: #20222b;
+            background-color: var(--white); 
         }
 
         .image-carousel {
             position: relative;
             width: 80vw;
-            max-width: 600px;
-            margin: 20px auto;
+            max-width: 600vw;
+            margin: 20vw auto;
             text-align: center;
         }
 
         .image-carousel img {
             width: 60%;
-            border-radius: 15px;
+            border-radius: 1vw;
         }
 
         .image-carousel button {
@@ -79,12 +95,13 @@
             border: none;
             padding: 1vw;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 1vw;
         }
 
         #prev {left: 4.5vw;}
 
         #next {right: 4.5vw;}
+
         .half-size {
             height: 60%; 
             width: 60%;
@@ -93,12 +110,10 @@
             top: 2.5vw;
         }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-            margin: 0; 
-        }
+        iframe, img{border-radius: 2vw; margin: 1vw; }
+        img{max-width: 50vw;}
+        a{text-decoration: none;transition: all 0.2s ease;}
+        a:hover{color: var(--background);background-color: var(--white);}
     </style>
     <script defer>
         // Change the title to "Matteogeraldo05"
@@ -239,13 +254,6 @@
         </div>
     </div>
     <div class="website-container">
-        <iframe src="https://matteogeraldo05.com/projects.html" title="Matteogeraldo05" class="website-iframe"></iframe>
-        <div class="project-info">
-            <p>This is my website :3.</p>
-            <a href="https://github.com/matteogeraldo05/SummerBar" class="view-project-btn" target="_blank">View Project</a>
-        </div>
-    </div>
-    <div class="website-container">
         <iframe src="https://matteogeraldo05.github.io/SummerBar/" title="University Progress Bar" class="website-iframe"></iframe>
         <div class="project-info">
             <p>This website was initially created to count down
@@ -288,11 +296,9 @@
     <div class="website-container">
         <iframe src="https://matteogeraldo05.github.io/XPwebsite.github.io/" title="XP Website" class="website-iframe"></iframe>
         <div class="project-info">
-            <p>Welcome to my Windows XP Simulation website, 
+            <p>Windows XP Simulation website, 
                 a tribute to the operating system that introduced 
                 me to the world of computers during my childhood. 
-                My parents' desktop ran Windows XP, and I loved its 
-                aesthetic and the countless games I played on it. 
                 When I discovered the <a href="https://github.com/botoxparty/XP.css" target="_blank">XP.css</a> framework I decided 
                 to create a desktop simulation out of sheer boredom 
                 during my high school spare time. (in case you need 
@@ -304,8 +310,8 @@
     <div class="website-container">
         <img id="carousel-image" src="images/arcade.gif" alt="Carousel Image" />
         <div class="project-info">
-            <p>IM BUILDING AN ARCADE!!!YEAH MAN!!!</p>
-            <a href="" class="view-project-btn" target="_blank">Download Model</a>
+            <p>IM BUILDING AN ARCADE!!!YEAH!!!</p>
+            <a href="arcade.obj" class="view-project-btn" target="_blank">Download Model</a>
         </div>
     </div>
 </body>
