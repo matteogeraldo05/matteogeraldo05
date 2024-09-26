@@ -193,7 +193,7 @@ window.onload = function() {
         //DO NOT DELETE SYSTEM 32
         "del": (args) => {
             if (args.length > 0 && args[0] === "C:\\System32") {
-                window.location.href = "home.html"; // Redirect to blank HTML
+                window.location.href = "html\\bsod.html"; // Redirect to blank HTML
                 return "C:\\System32 deleted successfully."; // Message to display in terminal
             } else {
                 return "The system cannot find the path specified.";

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience - Matteogeraldo05</title>
-    <link rel="icon" href="images/AlgorithMatteo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <title>About Me - Matteogeraldo05</title>
+    <link rel="icon" href="../images/AlgorithMatteo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
     <style>
         #projects{
             position: absolute;
@@ -21,7 +21,7 @@
     <script defer>
         // Change the title to "Matteogeraldo05"
         function normalTitle() {
-            document.title = "Work Experience - Matteogeraldo05";
+            document.title = "About Me - Matteogeraldo05";
         }
 
         // Change the title to "Leaving So Soon?"
@@ -35,15 +35,15 @@
 
         window.onload = function() {
             // Typing effect for name
-            typeOutText("Here is some of my past", 100, function() {
+            typeOutText("Here is a little info", 100, function() {
                 const nameText = document.getElementById('projects-text');
                 nameText.style.visibility = 'visible'; // Make the name visible
-                typeOutText("Work Experience", 100);
+                typeOutText("About Me", 100);
             });
 
             // Typing function
             function typeOutText(text, speed, callback) {
-                const targetElement = document.getElementById(text.includes("some") ? 'here-text':'projects-text');
+                const targetElement = document.getElementById(text.includes("little") ? 'here-text':'projects-text');
                 targetElement.classList.add('typing-effect'); // Add blinking cursor
                 targetElement.innerHTML = ''; // Clear existing text
                 let i = 0;
@@ -75,41 +75,41 @@
     <div id="sidebar">
         <div class="sidebar-buttons">
             <div class="sidebar-buttonIco">
-                <input id="algorithMatteo" type="image" src="images/AlgorithMatteo.ico" onclick="location.href='index.html'">
+                <input id="algorithMatteo" type="image" src="../images/AlgorithMatteo.ico" onclick="location.href='../index.html'">
                 <span id="title">Matteogeraldo05</span>
             </div>
             <div class="sidebar-button">
-                <input type="image" src="images/about.png" onclick="location.href='about.html'">
+                <input type="image" src="../images/about.png" onclick="location.href='about.html'">
                 <div onclick="location.href='about.html'" style="cursor: pointer;">
                     <span>About Me</span>
                 </div>
             </div>
             <div class="sidebar-button">
-                <input type="image" src="images/work.png" onclick="location.href='experience.html'">
+                <input type="image" src="../images/work.png" onclick="location.href='experience.html'">
                 <div onclick="location.href='experience.html'" style="cursor: pointer;">
                     <span>Work Experience</span>
                 </div>
             </div>
             <div class="sidebar-button">
-                <input type="image" src="images/skills.png" onclick="location.href='skills.html'">
+                <input type="image" src="../images/skills.png" onclick="location.href='skills.html'">
                 <div onclick="location.href='skills.html'" style="cursor: pointer;">
                     <span>Skills</span>
                 </div>
             </div>
             <div class="sidebar-button">
-                <input type="image" src="images/education.png" onclick="location.href='education.html'">
+                <input type="image" src="../images/education.png" onclick="location.href='education.html'">
                 <div onclick="location.href='education.html'" style="cursor: pointer;">
                     <span>Education</span>
                 </div>
             </div>
             <div class="sidebar-button">
-                <input type="image" src="images/projects.png" onclick="location.href='projects.html'">
+                <input type="image" src="../images/projects.png" onclick="location.href='projects.html'">
                 <div onclick="location.href='projects.html'" style="cursor: pointer;">
                     <span>Projects</span>
                 </div>
             </div>
             <div class="sidebar-button">
-                <input type="image" src="images/contact.png" onclick="location.href='contact.html'">
+                <input type="image" src="../images/contact.png" onclick="location.href='contact.html'">
                 <div onclick="location.href='contact.html'" style="cursor: pointer;">
                     <span>Contact Me</span>
                 </div>

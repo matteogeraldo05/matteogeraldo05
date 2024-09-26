@@ -20,6 +20,9 @@
     --terminal_purple:#AD7FA8;
     --terminal_cyan:  #34E2E2;
     --terminal_white: #EEEEEC;
+    
+    /* blue screen of death */
+    --bsod: #306ff6;
 }
 
 @font-face {
