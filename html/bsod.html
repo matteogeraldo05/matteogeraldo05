@@ -9,21 +9,65 @@
     <style>
         @font-face {
             font-family: bsodFont;
-            src:url("../fonts/segoeuil.ttf") format("truetype");
+            src: url("../fonts/segoeuil.ttf") format("truetype");
         }
-        body{
+        body {
             background-color: var(--bsod);
             color: var(--white);
             font-family: bsodFont;
+            overflow: hidden;
         }
-        h1{font-size: 10vh;}
-        h3{font-size: 7vh;}
+        
+        #message {
+            margin-left: 11%;
+        }
+        
+        h1 {
+            font-size: 25vh;
+            height: 18vh;
+            margin-top: 2%;
+        }
+        
+        h3 {
+            font-size: 5vh;
+            margin-left: 1vw;
+            width: 70%;
+            line-height: 150%;
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center; 
+            margin-top: 1rem; 
+        }
+
+        img {
+            width: 7.5%;
+            margin-left: 1%;
+            margin-right: 1rem; 
+        }
+
+        a{
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        a:hover{
+            color: var(--background);
+            background-color: var(--white);}
     </style>
 </head>
 <body>
-    <div>
+    <div id="message">
         <h1>:(</h1>
         <h3>Your website ran into a problem that it couldn't handle, and now it needs to restart. Please close this tab and start a new instance of the website.</h3>
+        <h3>INACCESSIBLE_BOOT_DEVICE: 0x61AF2FF8, 0xEDCCAEBE</h3>
+        <div class="flex-container">
+            <img src="../images/troll.png" alt="Troll Image">
+            <p>For more information about this issue and possible fixes, visit <a href="https://matteogeraldo05.com" target="_blank">https://matteogeraldo05.com</a><br><br><br>
+            if you contact a support person, give them this info:<br>
+        Stop Code: CRITICAL_PROCESS_DIED</p>
+        </div>
     </div>
 </body>
 </html>
