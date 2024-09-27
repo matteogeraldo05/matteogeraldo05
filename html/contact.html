@@ -7,7 +7,16 @@
     <link rel="icon" href="../images/AlgorithMatteo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <style>
-        #projects{
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin: 0; 
+            font-size: 3vh;
+            color: var(--white);
+        }
+
+        #projects {
             position: absolute;
             top: 25%;
             left: 10vw; 
@@ -16,6 +25,102 @@
             text-align: left; 
             font-size: 2.5vh;
             z-index: 10;
+        }
+
+        .container {
+            display: flex; 
+            flex-direction: column; 
+            width: 50%;
+            height: 80%;
+            margin-top: 8vh; 
+            margin-left: 40vw;
+            background-color: #0c0d12;
+            border-radius: 3vw; 
+            box-shadow: 0 3vh 3vw rgba(0, 0, 0, 0.2); 
+            padding: 1vw; 
+        }
+
+        #name, #email, #message{
+            left: 10%
+        }
+
+        form {
+            align-items: center; 
+            margin-top: 1rem; 
+            
+        }
+
+        label {
+            color: var(--white);
+            position: absolute;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            transform: translateY(3vh); 
+        }
+
+        textarea {
+            width: 75%;
+            height: 36vh;
+            resize: none;
+            padding: 0.5vw;
+            color: var(--white); 
+            background: transparent;
+            border: 0.5vh solid var(--white); 
+        }
+
+        .textentry, .message-entry {
+            font-family: codeFont;
+            font-size: 3vh;
+            color: var(--white);
+            width: 75%;
+            height: 8vh;
+            background: transparent;
+            border: none;
+            border-bottom: 0.5vh solid var(--white);
+            margin-bottom: 1.5vh;            
+            padding-top: 1vh;
+            padding-left: 0vw; 
+            resize: none;
+        }
+
+        .message-entry {
+            height: 40vh;
+            box-sizing: border-box;
+            border-bottom: 0.5vh solid var(--white);
+            margin-bottom: 1vh;
+            margin-left: 0vw;
+            margin-top: 2.9vh;
+            padding-top: 0vh; 
+        }
+
+        .textentry:focus, textarea:focus {
+            outline: none;
+        }
+
+        #submit-btn {
+            transition: all 0.5s ease;
+            color: var(--white);
+            border: 0.2vw solid var(--white);
+            font-family: codeFont;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1;
+            font-size: 2.5vh;
+            background-color: transparent;
+            padding: 1vh;
+            border-radius: 0.5vw;
+            text-decoration: none;
+            margin-left: 45%;
+        }
+
+        #submit-btn:hover {
+            color: #20222b;
+            background-color: var(--white); 
+        }
+
+        .label-faded {
+            opacity: 0;
+            transform: translateY(0);
         }
     </style>
     <script defer>
@@ -67,6 +172,21 @@
                 setTimeout(() => {
                     icon.classList.add("fade-in");
                 }, index * 150); // stagger the fade-in by 150ms
+            });
+
+            const inputs = document.querySelectorAll('.textentry, .message-entry');
+            inputs.forEach(input => {
+                const label = input.previousElementSibling;
+
+                input.addEventListener('focus', () => {
+                    label.classList.add('label-faded');
+                });
+
+                input.addEventListener('blur', () => {
+                    if (input.value.trim() === '') {
+                        label.classList.remove('label-faded');
+                    }
+                });
             });
         };
     </script>
@@ -120,6 +240,24 @@
     <div id="projects">
         <h3 id="here-text">Here are some of my</h3>
         <h1 id="projects-text" style="visibility: hidden;">Recent Projects</h1>
+    </div>
+    
+    <div class="container">
+        <form>
+            <div id="name" style="position: relative;">
+                <label>Name:</label>
+                <input class="textentry" type="text" spellcheck="false">
+            </div>
+            <div id="email" style="position: relative;">
+                <label>Email:</label>
+                <input class="textentry" type="email" spellcheck="false">
+            </div>
+            <div id="message" style="position: relative;">
+                <label>Message:</label>
+                <textarea class="message-entry"></textarea>
+            </div>
+            <a href="contact.html" id="submit-btn" target="_blank">SUBMIT</a>
+        </form>
     </div>
 </body>
 </html>

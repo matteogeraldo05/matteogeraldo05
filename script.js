@@ -78,7 +78,8 @@ window.onload = function() {
         enterKeyRelease: new Audio("audio/release/ENTER.mp3"),
         spacebarKeyRelease: new Audio("audio/release/SPACE.mp3"),
         genericKeyRelease: new Audio("audio/release/GENERIC.mp3"),
-        weAreAudio: new Audio("audio/we_are.mp3")
+        weAreAudio: new Audio("audio/we_are.mp3"),
+        crashAudio: new Audio("audio/crash.mp3")
     };
 
     // detect key input then play sound accordingly
@@ -193,8 +194,14 @@ window.onload = function() {
         //DO NOT DELETE SYSTEM 32
         "del": (args) => {
             if (args.length > 0 && args[0] === "C:\\System32") {
-                window.location.href = "html\\bsod.html"; // Redirect to blank HTML
-                return "C:\\System32 deleted successfully."; // Message to display in terminal
+                terminal.innerHTML += "C:\\System32 deleted successfully.\n"; // Print deletion message
+                setTimeout(() => {
+                    audioElements.crashAudio.play();
+                    setTimeout(() => {
+                        window.location.href = "html/bsod.html"; 
+                    }, 4000);
+                }, 500); 
+                return ""; 
             } else {
                 return "The system cannot find the path specified.";
             }
