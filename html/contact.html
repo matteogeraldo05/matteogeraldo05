@@ -40,7 +40,7 @@
             padding: 1vw; 
         }
 
-        #name, #email, #message{
+        #name-div, #email-div, #message-div{
             left: 10%
         }
 
@@ -138,6 +138,16 @@
         window.onblur = newTitle;
         window.onfocus = normalTitle;
 
+        //emailJS stuff ...
+        function sendMail(){
+            let parms = {
+                name : document.getElementById("name").value,
+                email : document.getElementById("email").value,
+                message : document.getElementById("message").value,
+            }
+            emailjs.send("service_11kkvst", "template_kki183g", parms).then(alert("Email Successfully Sent!"))
+        }
+
         window.onload = function() {
             // Typing effect for name
             typeOutText("Got A Question?", 100, function() {
@@ -189,6 +199,17 @@
                 });
             });
         };
+    </script>
+    <!--EmailJS code DONT TOUCH-->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "Nw-pDD9S3SBVMfL4-",
+            });
+        })();
     </script>
 </head>
 <body>
@@ -244,19 +265,19 @@
     
     <div class="container">
         <form>
-            <div id="name" style="position: relative;">
+            <div id="name-div" style="position: relative;">
                 <label>Name:</label>
-                <input class="textentry" type="text" spellcheck="false">
+                <input class="textentry" type="text" spellcheck="false" id="name" name="name">
             </div>
-            <div id="email" style="position: relative;">
+            <div id="email-div" style="position: relative;">
                 <label>Email:</label>
-                <input class="textentry" type="email" spellcheck="false">
+                <input class="textentry" type="email" spellcheck="false" id="email" name="email">
             </div>
-            <div id="message" style="position: relative;">
+            <div id="message-div" style="position: relative;">
                 <label>Message:</label>
-                <textarea class="message-entry"></textarea>
+                <textarea class="message-entry" id="message" name="message"></textarea>
             </div>
-            <a href="contact.html" id="submit-btn" target="_blank">SUBMIT</a>
+            <a onclick="sendMail()" id="submit-btn" target="_blank">SUBMIT</a>
         </form>
     </div>
 </body>
