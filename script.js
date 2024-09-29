@@ -191,6 +191,16 @@ window.onload = function() {
             }); 
             return "wait, im websited";
         },
+        //replace sounds with screaming LOL!
+        "wega.bat": () => {
+            //todo add luigi scream 
+            //audioElements.backspaceKeyPress = new Audio("audio/scream/luigi_scream.mp3");
+            //audioElements.enterKeyPress = new Audio("audio/scream/luigi_scream.mp3");
+            //audioElements.spacebarKeyPress = new Audio("audio/scream/luigi_scream.mp3");
+            audioElements.genericKeyPress = new Audio("audio/scream/wega_scream.mp3");
+            audioElements.genericKeyRelease = new Audio("audio/scream/wega_scream.mp3");
+            return "oh no...";
+        },
         //DO NOT DELETE SYSTEM 32
         "del": (args) => {
             if (args.length > 0 && args[0] === "C:\\System32") {
