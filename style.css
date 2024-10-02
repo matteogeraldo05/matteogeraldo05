@@ -247,3 +247,30 @@ body {
         opacity: 1;
     }
 }
+
+
+#orientation-warning {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0);
+    color: var(--white);
+    font-size: 7vh;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+@media screen and (orientation: portrait) {
+    #orientation-warning {
+        display: flex;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    #orientation-warning {
+        display: none;
+    }
+}
