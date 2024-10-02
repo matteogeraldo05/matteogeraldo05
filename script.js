@@ -60,10 +60,12 @@ window.onload = function() {
 
     const colors = {
         red: "var(--terminal_red)",
-        green: "var(--terminal_green)",
+        orange: "var(--terminal_orange)",
         yellow: "var(--terminal_yellow)",
+        green: "var(--terminal_green)",
         blue: "var(--terminal_blue)",
         purple: "var(--terminal_purple)",
+        pink: "var(--terminal_pink)",
         cyan: "var(--terminal_cyan)",
         white: "var(--terminal_white)"
     };
@@ -116,7 +118,7 @@ window.onload = function() {
         "cls           -> clears terminal\n"+
         "date          -> shows current date\n"+
         "print         -> prints the current screen\n"+
-        "cd {html}     -> redirects to the html page\n"+
+        "cd {DIR}     -> redirects to the html page\n"+
         "color {color} -> changes terminal color\n"+
         "dir           -> shows list of files\n"+
         "exit          -> closes tab\n",
@@ -129,18 +131,21 @@ window.onload = function() {
         },
         //change directory
         "cd": (args) => {
-            if ((args.length > 0) && (args == "about" || args == "projects" || args == "contact")) {
+            if ((args.length > 0) && (args == "about" || args == "experience" || args == "skills" || args == "education" || args == "projects" || args == "contact")) {
                 const destination = args[0];
-                window.location.href = destination + ".html";
+                window.location.href = "html/" + destination + ".html";
             } else {
                 return "The system cannot find the path specified.";
             }
         },
         //list directory
-        "dir": () => "2024-06-16  12:33 PM    {DIR}      about\n" +
-                     "2024-07-14   4:12 PM    {DIR}      projects\n" +
-                     "2024-08-22  12:33 PM    {DIR}      contact\n" +
-                     "2024-09-17  11:54 AM    {EXE}      virus.exe\n",
+        "dir": () => "2024-04-05  09:45 AM    {DIR}      about\n" +
+                     "2024-05-23  11:32 AM    {DIR}      experience\n" +
+                     "2024-06-14  07:42 PM    {DIR}      skills\n" +
+                     "2024-07-16  10:30 PM    {DIR}      education\n" +
+                     "2024-08-19  04:52 PM    {DIR}      projects\n" +
+                     "2024-09-22  12:13 PM    {DIR}      contact\n" +
+                     "2024-10-01  01:37 PM    {EXE}      virus.exe\n",
         // exactly what you think it does
         "print": () => {
             window.print(); // This will trigger the print dialog
@@ -173,7 +178,7 @@ window.onload = function() {
                     return `Invalid color. Available colors: ${Object.keys(colors).join(", ")}.`;
                 }
             } else {
-                return "Please specify a color.";
+                return `Invalid color. Available colors: ${Object.keys(colors).join(", ")}.`;
             }
         },
         //EASTER EGGS
@@ -191,7 +196,7 @@ window.onload = function() {
             }); 
             return "wait, im websited";
         },
-        //replace sounds with screaming LOL!
+        //replace sounds with screaming
         "wega.bat": () => {
             //todo add luigi scream 
             //audioElements.backspaceKeyPress = new Audio("audio/scream/luigi_scream.mp3");
@@ -203,8 +208,8 @@ window.onload = function() {
         },
         //DO NOT DELETE SYSTEM 32
         "del": (args) => {
-            if (args.length > 0 && args[0] === "C:\\System32") {
-                terminal.innerHTML += "C:\\System32 deleted successfully.\n"; // Print deletion message
+            if (args.length > 0 && args[0] === "C:\\System168") {
+                terminal.innerHTML += "C:\\System168 deleted successfully.\n"; // Print deletion message
                 setTimeout(() => {
                     audioElements.crashAudio.play();
                     setTimeout(() => {

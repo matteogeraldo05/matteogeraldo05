@@ -13,6 +13,13 @@
             align-items: center; 
             margin: 0; 
             font-size: 3vh;
+            overflow: hidden;
+            overflow: auto;
+            scrollbar-width: 100%;  
+        }
+        
+        body::-webkit-scrollbar {
+            display: none; 
         }
 
         #projects {
@@ -24,6 +31,29 @@
             text-align: left; 
             font-size: 2.5vh;
             z-index: 10;
+            animation: textFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-50%);
+            }
+        }
+
+        @keyframes projectFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
         }
 
         .website-container {
@@ -36,6 +66,7 @@
             border-radius: 3vw; 
             box-shadow: 0 3vh 3vw rgba(0, 0, 0, 0.2); 
             padding: 1vw; 
+            animation: projectFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
 
         .website-iframe {
@@ -49,6 +80,15 @@
             color: var(--white); 
             text-align: left; 
             max-width: 20vw; 
+            overflow: hidden; 
+            padding-bottom: 2vh;
+        }
+
+        .arcade-info {
+            margin-left: 2vw; 
+            color: var(--white); 
+            text-align: left; 
+            max-width: 40vw; 
             overflow: hidden; 
             padding-bottom: 2vh;
         }
@@ -308,10 +348,27 @@
         </div>
     </div>
     <div class="website-container">
-        <img id="carousel-image" src="../images/arcade.gif" alt="Carousel Image" />
+        <iframe src="https://www.youtube.com/@AlgorithMatteo" title="AlgorithMatteo" class="website-iframe"></iframe>
         <div class="project-info">
-            <p>IM BUILDING AN ARCADE!!!YEAH!!!</p>
-            <a href="../arcade.obj" class="view-project-btn" target="_blank">Download Model</a>
+            <p>Check out my YouTube channel! I created it to share my knowledge of coding with the world. 
+                I believe everyone should learn Python, as it's such an easy and useful tool. One day, while sitting in my room, 
+                I thought, “I have this knowledge, and I know how to photo and video edit—so why not create these videos for free?” 
+                That's how it all started! More videos are on the way, so stay tuned!</p>
+            <a href="https://www.youtube.com/@AlgorithMatteo" class="view-project-btn" target="_blank">View Channel</a>
+        </div>
+    </div>
+    <div class="website-container">
+        <img id="carousel-image" src="../images/arcade.gif" alt="Carousel Image" />
+        <div class="arcade-info">
+            <p>I have a deep passion for retro games, which inspired me to create my own arcade system. 
+                I began this exciting journey by using Blender to design a detailed 3D model of my arcade, 
+                which you can download using the button below. 
+                I am currently in the process of obtaining wood for the project. To bring my vision to life, 
+                I also utilized emulators like RetroArch, Dolphin, RPCS3, and PCSX2. 
+                These powerful tools allow me to play and showcase my favorite classic games on modern hardware, 
+                giving me the nostalgic experience I love while also while enabling me to upscale the games to their maximum possible quality.</p>
+            <a href="../arcade.obj" class="view-project-btn" target="_blank">Download Arcade Model</a>
+            <a href="../retroarch.cfg" class="view-project-btn" target="_blank">Downlaod RetroArch CFG</a>
         </div>
     </div>
     <div id="orientation-warning">Please Turn The Phone Landscape</div>

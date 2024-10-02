@@ -25,6 +25,29 @@
             text-align: left; 
             font-size: 2.5vh;
             z-index: 10;
+            animation: textFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-50%);
+            }
+        }
+
+        @keyframes contactFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
         }
 
         .container {
@@ -38,6 +61,7 @@
             border-radius: 3vw; 
             box-shadow: 0 3vh 3vw rgba(0, 0, 0, 0.2); 
             padding: 1vw; 
+            animation: contactFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
 
         #name-div, #email-div, #message-div{
@@ -259,8 +283,8 @@
     </div>
 
     <div id="projects">
-        <h3 id="here-text">Here are some of my</h3>
-        <h1 id="projects-text" style="visibility: hidden;">Recent Projects</h1>
+        <h3 id="here-text">Got a Question?</h3>
+        <h1 id="projects-text" style="visibility: hidden;">Contact Me</h1>
     </div>
     
     <div class="container">

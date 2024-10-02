@@ -7,7 +7,22 @@
     <link rel="icon" href="../images/AlgorithMatteo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <style>
-        #projects{
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin: 0; 
+            font-size: 3vh;
+            overflow: hidden;
+            overflow: auto; /* Enable scrolling on the body */
+            scrollbar-width: 100%; /* Hide scrollbar for Firefox */ 
+        }
+        
+        body::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+        }
+
+        #projects {
             position: absolute;
             top: 25%;
             left: 10vw; 
@@ -16,7 +31,69 @@
             text-align: left; 
             font-size: 2.5vh;
             z-index: 10;
+            animation: textFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
+
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(50%);
+            }
+        }
+
+        @keyframes projectFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+
+        .website-container {
+            display: flex; 
+            align-items: center; 
+            width: 90%;
+            margin-top: 5%;
+            margin-bottom: 20vh; 
+            margin-left: 5vw;
+            background-color: #0c0d12;
+            border-radius: 3vw; 
+            box-shadow: 0 3vh 3vw rgba(0, 0, 0, 0.2); 
+            padding: 1vw; 
+            animation: projectFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        .project-info {
+            margin-left: 2vw;
+            color: var(--white); 
+            text-align: left; 
+            max-width: 40vw; 
+            overflow: hidden; 
+            padding-bottom: 2vh;
+        }
+
+        .half-size {
+            height: 60%; 
+            width: 60%;
+            position: relative;
+            left: 15vw;
+            top: 2.5vw;
+        }
+
+        iframe, img{border-radius: 2vw; margin: 1vw; }
+        
+        img{max-width: 20vw;}
+        
+        a{text-decoration: none;transition: all 0.2s ease;}
+        
+        a:hover{color: var(--background);background-color: var(--white);}
     </style>
     <script defer>
         // Change the title to "Matteogeraldo05"
@@ -35,15 +112,15 @@
 
         window.onload = function() {
             // Typing effect for name
-            typeOutText("Here is my Past, Present and Future", 100, function() {
+            typeOutText("Here is some info on", 100, function() {
                 const nameText = document.getElementById('projects-text');
                 nameText.style.visibility = 'visible'; // Make the name visible
-                typeOutText("Education", 100);
+                typeOutText("My Education", 100);
             });
 
             // Typing function
             function typeOutText(text, speed, callback) {
-                const targetElement = document.getElementById(text.includes("Past") ? 'here-text':'projects-text');
+                const targetElement = document.getElementById(text.includes("info") ? 'here-text':'projects-text');
                 targetElement.classList.add('typing-effect'); // Add blinking cursor
                 targetElement.innerHTML = ''; // Clear existing text
                 let i = 0;
@@ -118,9 +195,17 @@
     </div>
 
     <div id="projects">
-        <h3 id="here-text">Here are some of my</h3>
-        <h1 id="projects-text" style="visibility: hidden;">Recent Projects</h1>
+        <h3 id="here-text">Here is some info on</h3>
+        <h1 id="projects-text" style="visibility: hidden;">My Education</h1>
     </div>
+
+    <div class="website-container half-size">
+        <img src="../images/school.jpg">
+        <div class="project-info">
+            <p>I am excited to be pursuing a Bachelor's degree in Computer Science at <a href="https://ontariotechu.ca/" target="_blank">Ontario Tech University</a>, with an anticipated graduation in 2028. As an active member of the OTU Computer Science Club, I am eager to connect with fellow enthusiasts and enhance my skills.</p>
+        </div>
+    </div>
+
     <div id="orientation-warning">Please Turn The Phone Landscape</div>
 </body>
 </html>

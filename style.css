@@ -14,10 +14,12 @@
     /* harsh colours */
     --terminal_black: #000000;
     --terminal_red:   #EF2929;
-    --terminal_green: #8AE234;
-    --terminal_yellow:#FCE94F;
-    --terminal_blue:  #729FCF;
-    --terminal_purple:#AD7FA8;
+    --terminal_orange:#ff681d;
+    --terminal_yellow:#ffe51d;
+    --terminal_green: #5fe234;
+    --terminal_blue:  #3439ce;
+    --terminal_purple:#9636bf;
+    --terminal_pink:  #bf25af;
     --terminal_cyan:  #34E2E2;
     --terminal_white: #EEEEEC;
     
@@ -53,6 +55,29 @@ body {
     text-align: left; 
     font-size: 2.5vh;
     z-index: 10;
+    animation: halloFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes halloFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-200%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes terminalFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-200%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
 }
 
 #terminal-container {
@@ -68,6 +93,7 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    animation: terminalFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 #title-bar {
@@ -247,7 +273,6 @@ body {
         opacity: 1;
     }
 }
-
 
 #orientation-warning {
     position: fixed;

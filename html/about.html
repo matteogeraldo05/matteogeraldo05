@@ -7,7 +7,22 @@
     <link rel="icon" href="../images/AlgorithMatteo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <style>
-        #projects{
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin: 0; 
+            font-size: 3vh;
+            overflow: hidden;
+            overflow: auto; 
+            scrollbar-width: 100%; 
+        }
+        
+        body::-webkit-scrollbar {
+            display: none; 
+        }
+
+        #projects {
             position: absolute;
             top: 25%;
             left: 10vw; 
@@ -16,7 +31,96 @@
             text-align: left; 
             font-size: 2.5vh;
             z-index: 10;
+            animation: textFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
+
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(35%);
+            }
+        }
+
+        @keyframes projectFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+
+        .website-container {
+            display: flex; 
+            align-items: center; 
+            width: 90%;
+            margin-top: 2%;
+            margin-bottom: 20vh; 
+            margin-left: 5vw;
+            background-color: #0c0d12;
+            border-radius: 3vw; 
+            box-shadow: 0 3vh 3vw rgba(0, 0, 0, 0.2); 
+            padding: 1vw; 
+            animation: projectFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        .project-info {
+            margin-left: 2vw;
+            color: var(--white); 
+            text-align: left; 
+            max-width: 40vw; 
+            overflow: hidden; 
+            padding-bottom: 2vh;
+        }
+
+        .half-size {
+            height: 60%; 
+            width: 60%;
+            position: relative;
+            left: 15vw;
+            top: 2.5vw;
+        }
+
+        #filter-white{
+            filter: invert(1) brightness(100%);
+        }
+
+        #icon-buttons {
+            color: white;
+            position: absolute;
+            bottom: 8%;
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+        }
+
+        .icon {
+            cursor: pointer;
+            width: 8vw;
+            height: 8vh;
+            margin: 0 1vh;
+            border-radius: 0; 
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+            opacity: 0.8; 
+        }
+
+        iframe, img{border-radius: 2vw; margin: 1vw; }
+
+        img{max-width: 20vw;}
+
+        a{text-decoration: none;transition: all 0.2s ease;}
+
+        a:hover{color: var(--background);background-color: var(--white);}
     </style>
     <script defer>
         // Change the title to "Matteogeraldo05"
@@ -121,6 +225,25 @@
         <h3 id="here-text">Here are some of my</h3>
         <h1 id="projects-text" style="visibility: hidden;">Recent Projects</h1>
     </div>
+
+    <div class="website-container half-size">
+        <img src="../images/pfp.png">
+        <div class="project-info">
+            <p>Hi, my name is Matteo De Angelis Geraldo! I'm a computer science student at Ontario Tech University, currently seeking a co-op or internship position. If you're interested in hiring me, please click the contact me button on the sidebar to the left!
+                In addition to my studies, I enjoy playing video games and working on personal projects (you can find more info in the projects tab). I also love photo and video editing, and I have a passion for cooking. You can find more about my hobbies on my <a href="https://linktr.ee/matteogeraldo05" target="_blank">Linktree! </a></p>
+        </div>
+    </div>
+
+    <div id="icon-buttons">
+        <img class="icon" src="../images/social/github.svg" onclick="location.href='https://github.com/matteogeraldo05/'" alt="GitHub Icon" id="filter-white">
+        <img class="icon" src="../images/social/linkedin.svg" onclick="location.href='https://www.linkedin.com/in/matteo-de-angelis-geraldo-583110254/'" alt="LinkedIn Icon" id="filter-white">
+        <img class="icon" src="../images/social/youtube.svg" onclick="location.href='https://www.youtube.com/channel/UCGo90K4V8w8yd3BrqMTMbxQ'" alt="YouTube Icon" id="filter-white">
+        <img class="icon" src="../images/social/discord.svg" onclick="location.href='https://discord.com/invite/Fb5aUwvh3D'" alt="Discord Icon" id="filter-white">
+        <img class="icon" src="../images/social/instagram.svg" onclick="location.href='https://www.instagram.com/matteogeraldo05/'" alt="Instagram Icon" id="filter-white">
+        <img class="icon" src="../images/social/x.svg" onclick="location.href='https://x.com/matteogeraldo05'" alt="X Icon" id="filter-white">
+    </div>
+
+
     <div id="orientation-warning">Please Turn The Phone Landscape</div>
 </body>
 </html>
