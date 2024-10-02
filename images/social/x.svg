@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 50 50" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
-  <g id="fluent">
-    <polygon points="21.26,26.59 22.66,28.64 9.41,44 6.23,44 &#9;" style="fill: rgb(0, 0, 0);"/>
-    <polygon points="42.2,6 28.01,22.45 26.6,20.4 39.03,6 &#9;" style="fill: rgb(0, 0, 0);"/>
-    <path d="M16.881,8l23.322,34H33.04L9.717,8H16.881 M17.934,6H5.92l26.066,38H44L17.934,6L17.934,6z" style="fill: rgb(0, 0, 0);"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="30px" height="30px" fill-rule="nonzero"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M26.37,26l-8.795,-12.822l0.015,0.012l7.93,-9.19h-2.65l-6.46,7.48l-5.13,-7.48h-6.95l8.211,11.971l-0.001,-0.001l-8.66,10.03h2.65l7.182,-8.322l5.708,8.322zM10.23,6l12.34,18h-2.1l-12.35,-18z"></path></g></g></svg>
