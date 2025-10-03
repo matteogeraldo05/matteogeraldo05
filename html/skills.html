@@ -7,7 +7,22 @@
     <link rel="icon" href="../images/AlgorithMatteo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
     <style>
-        #projects{
+        body {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        margin: 0; 
+        font-size: 3vh;
+        overflow: auto;
+        scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none; 
+        }
+
+        #projects {
+            /* Keep existing styles */
             position: absolute;
             top: 25%;
             left: 10vw; 
@@ -16,7 +31,74 @@
             text-align: left; 
             font-size: 2.5vh;
             z-index: 10;
+
+            /* Add animation */
+            animation: textFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
+
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-50%);
+            }
+        }
+
+        #skills-container {
+            width: 70%;
+            margin: 30vh 5vw 10vh 5vw; /* Adds spacing from the top and sides */
+            background-color: #0c0d12;
+            border-radius: 3vw;
+            box-shadow: 0 3vh 3vw rgba(0, 0, 0, 0.2);
+            padding: 2vw;
+            color: var(--white);
+            font-size: 2.2vh;
+            text-align: left;
+            animation: projectFadeIn 1.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        @keyframes projectFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-200%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+
+        #skills-container h1 {
+            font-size: 4vh;
+            margin-bottom: 1vh;
+        }
+
+        #skills-container ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #skills-container ul li {
+            margin-bottom: 1.5vh;
+            line-height: 1.4;
+        }
+
+        a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--background);
+            background-color: var(--white);
+            padding: 0.2vh 0.5vw;
+            border-radius: 0.3vw;
+        }
+
     </style>
     <script defer>
         // Change the title to "Matteogeraldo05"
@@ -121,6 +203,20 @@
         <h3 id="here-text">Here are some of my</h3>
         <h1 id="projects-text" style="visibility: hidden;">Recent Projects</h1>
     </div>
+    <br>
+    <div id="skills-container">
+        <h1>Skills</h1>
+        <ul>
+            <li><strong>Leadership & Communication:</strong> Led team efforts in Hackhive 2024 and NASA Space Apps Hackathon, building positive relationships and fostering collaboration for enhanced productivity, problem-solving, and innovation.</li>
+            <li><strong>Languages:</strong> Proficient in Python, C++, SQL, HTML, CSS, JavaScript, Assembly, LaTeX, and more, with a strong focus on writing clean, efficient, and maintainable code for a wide range of applications.</li>
+            <li><strong>Development Tools:</strong> Experienced with Visual Studio, VS Code, Git, Linux terminal, and Blender for software development and design, enabling streamlined workflows and version control.</li>
+            <li><strong>Microsoft Office Suite:</strong> Adept in Excel, Word, Outlook, OneDrive, and Teams, leveraging these tools for efficient project management, data analysis, and team coordination.</li>
+            <li><strong>Adobe Creative Cloud:</strong> Skilled in Premiere Pro, Photoshop, and Illustrator, producing high-quality graphic designs and video content tailored to brand and project needs.</li>
+            <li><strong>UI Design:</strong> Expertise in creating modern, visually appealing user interfaces that enhance user experience and engagement, utilizing design principles and tools to develop intuitive and effective layouts.</li>
+            <li><strong>STEM Proficiency:</strong> Strong foundation in mathematics and science, with a passion for analytical problem-solving and applying STEM principles to real-world challenges.</li>
+        </ul>
+    </div>
+
     <div id="orientation-warning">Please Turn The Phone Landscape</div>
 </body>
 </html>
